@@ -31,16 +31,10 @@ def preprocess_image_clahe(img_path):
     img_float = img.astype(np.float32)
     mean = np.mean(img_float)
     std = np.std(img_float)
-    if std > 0:
-        img_z = (img_float - mean) / std
-    else:
-        img_z = img_float - mean
+    img_z = (img_float - mean) / (std + 1e-06)
     min_val = np.min(img_z)
     max_val = np.max(img_z)
-    if max_val - min_val > 0:
-        img_norm = (img_z - min_val) / (max_val - min_val)
-    else:
-        img_norm = img_z
+    img_norm = (img_z - min_val) / (max_val - min_val + 1e-06)
     img_uint8 = (img_norm * 255).astype(np.uint8)
     clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
     img_clahe = clahe.apply(img_uint8)

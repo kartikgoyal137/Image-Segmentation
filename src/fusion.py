@@ -1,6 +1,5 @@
 import os
 import torch
-import torch.nn.functional as F
 from tqdm.auto import tqdm
 from torch.utils.data import DataLoader, random_split
 from models import (
@@ -127,7 +126,7 @@ def train_meta_learner():
             torch.save(
                 {"model_state": meta_model.state_dict(), "dice": avg_dice}, SAVE_PATH
             )
-            print(f"  ✓ Saved Best Model")
+            print(f"Saved Best Model")
 
 
 if __name__ == "__main__":

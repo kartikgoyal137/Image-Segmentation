@@ -1,15 +1,11 @@
 import os
 import torch
 import timm
-from tqdm.auto import tqdm
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.utils.data import Dataset, DataLoader, random_split
+from torch.utils.data import Dataset
 from torchvision import transforms
 from PIL import Image
-import numpy as np
-import sys
-
 
 class ConvBlock(nn.Module):
     def __init__(self, in_ch, out_ch):
