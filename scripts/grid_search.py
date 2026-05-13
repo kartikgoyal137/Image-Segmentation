@@ -10,11 +10,11 @@ sys.path.append("../src")
 from models import AttentionUNet
 from models import SwinUNet
 
-VAL_DIR = "/home/kartik/Desktop/shalini/brain_brisc/data/brisc_processed/val"
+VAL_DIR = "./brain_brisc/data/brisc_processed/val"
 ATTENTION_WEIGHTS = (
-    "/home/kartik/Desktop/shalini/brain_brisc/models/best_attention_unet.pth"
+    "./brain_brisc/models/best_attention_unet.pth"
 )
-SWIN_WEIGHTS = "/home/kartik/Desktop/shalini/brain_brisc/models/best_swin_unet.pth"
+SWIN_WEIGHTS = "./brain_brisc/models/best_swin_unet.pth"
 IMG_SIZE = 256
 
 
